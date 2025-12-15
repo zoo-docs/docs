@@ -1,0 +1,11 @@
+{
+  "title": "Zoo Docs",
+  "root": true,
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "---Protocols---",
+    "---Governance---",
+    "---Resources---"
+  ]
+}
