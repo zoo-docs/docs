@@ -4,7 +4,7 @@ Official documentation for Zoo Labs Foundation - Democratizing AI through decent
 
 ## Overview
 
-This is a [Fumadocs](https://fumadocs.vercel.app) documentation site for the Zoo ecosystem.
+Built with [@hanzo/docs](https://hanzo.ai/docs) - the documentation framework by Hanzo AI.
 
 ## Development
 
@@ -29,7 +29,7 @@ zoo-docs/
 ├── content/               # MDX content
 │   └── docs/             # Documentation content
 ├── lib/                   # Utilities
-│   ├── source.ts         # Fumadocs source config
+│   ├── source.ts         # @hanzo/docs source config
 │   └── layout.shared.tsx # Shared layout options
 └── public/               # Static assets
 ```
@@ -68,4 +68,4 @@ This documentation site shares core functionality with:
 - [Hanzo Docs](https://github.com/hanzoai/docs)
 - [Lux Docs](https://github.com/luxfi/docs)
 
-All three use the same Fumadocs foundation with brand-specific theming.
+All three use the same @hanzo/docs foundation with brand-specific theming.

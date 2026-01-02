@@ -2,13 +2,13 @@ import { source } from '@/lib/source';
 import {
   DocsPage,
   DocsBody,
-} from 'fumadocs-ui/page';
+} from '@hanzo/docs/ui/page';
 import { notFound } from 'next/navigation';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Callout } from 'fumadocs-ui/components/callout';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
-import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import defaultMdxComponents from '@hanzo/docs/ui/mdx';
+import { Tab, Tabs } from '@hanzo/docs/ui/components/tabs';
+import { Callout } from '@hanzo/docs/ui/components/callout';
+import { TypeTable } from '@hanzo/docs/ui/components/type-table';
+import { Accordion, Accordions } from '@hanzo/docs/ui/components/accordion';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -17,7 +17,9 @@ export default async function Page(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  const { body: Mdx, toc } = await page.data.load();
+  // Type assertion to work around TypeScript inference issues with MDX async loading
+  const loadFn = (page.data as any).load;
+  const { body: Mdx, toc } = await loadFn();
 
   return (
     <DocsPage toc={toc}>

@@ -1,24 +1,28 @@
-import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from 'fumadocs-mdx/config';
-import { z } from 'zod';
+import { defineConfig, defineDocs } from '@hanzo/docs/mdx/config';
 
 export const docs = defineDocs({
   docs: {
-    schema: frontmatterSchema.extend({
-      preview: z.string().optional(),
-      index: z.boolean().default(false),
-    }),
     async: true,
   },
-  meta: {
-    schema: metaSchema.extend({
-      description: z.string().optional(),
-    }),
-  },
+  meta: {},
 });
 
 export default defineConfig({
-  mdxOptions: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+  mdxOptions: async () => {
+    const { rehypeCodeDefaultOptions } = await import(
+      '@hanzo/docs/core/mdx-plugins/rehype-code'
+    );
+
+    return {
+      rehypeCodeOptions: {
+        langs: ['ts', 'js', 'html', 'tsx', 'mdx', 'python', 'rust', 'bash', 'json', 'yaml', 'toml'],
+        inline: 'tailing-curly-colon',
+        themes: {
+          light: 'github-light',
+          dark: 'github-dark',
+        },
+        transformers: [...(rehypeCodeDefaultOptions.transformers ?? [])],
+      },
+    };
   },
 });
