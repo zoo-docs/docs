@@ -10,7 +10,6 @@
     "types:check": "hanzo-docs-mdx && tsc --noEmit"
   },
   "dependencies": {
-    "@zoo/brand": "file:../brand",
     "@hanzo/docs": "16.2.9",
     "@hanzo/docs-core": "16.4.3",
     "@hanzo/docs-base-ui": "16.4.3",
