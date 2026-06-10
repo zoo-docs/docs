@@ -43,9 +43,8 @@ Zoo aligns with and reports against the following frameworks
 |---|---|---|
 | Lux Industries | Chain infrastructure (Quasar 3.0, A/B/M/F/Z chains) | LP-020, LP-134 |
 | Hanzo AI Inc (Techstars '17) | AI compute (Hanzo Network, Zen models, Hanzo AI Chain) | Hanzo AI Chain whitepaper |
-| Liquidity (US-only) | Exclusive partner for retail-scale digital-securities trading | LP-134 white-label model |
 
-These are the only three named technical partners. Zoo is OSS; the
+These are the named technical partners. Zoo is OSS; the
 broader ecosystem participates as community, not as named partner.
 
 ## 4. Research and Academic Partners
