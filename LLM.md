@@ -1,4 +1,4 @@
-# docs — AI Assistant Context
+# docs
 
 # Zoo Docs
 
