@@ -1,4 +1,5 @@
 import './global.css';
+import './gui.css';
 import type { Viewport, Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -9,10 +10,12 @@ export const metadata: Metadata = {
     template: '%s | Zoo Docs',
     default: 'Zoo Docs',
   },
-  description: 'Documentation for Zoo Labs Foundation - Democratizing AI through decentralized training.',
+  description:
+    'Documentation for Zoo Labs Foundation - Democratizing AI through decentralized training.',
   openGraph: {
     title: 'Zoo Docs',
-    description: 'Documentation for Zoo Labs Foundation - Democratizing AI through decentralized training.',
+    description:
+      'Documentation for Zoo Labs Foundation - Democratizing AI through decentralized training.',
     url: 'https://docs.zoo.ngo',
     siteName: 'Zoo Docs',
   },
@@ -34,7 +37,7 @@ const mono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0a1208' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
   ],
 };
@@ -46,8 +49,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${geist.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+      <body>
+        <RootProvider
+          theme={{ defaultTheme: 'dark' }}
+          // The index is a static file the export writes; the dialog searches
+          // it in the browser — this site has no server to ask.
+          search={{ options: { type: 'static' } }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
