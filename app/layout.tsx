@@ -55,6 +55,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           // The index is a static file the export writes; the dialog searches
           // it in the browser — this site has no server to ask.
           search={{ options: { type: 'static' } }}
+          ai={{
+            token: 'hz_ZNWQesHHPpfxOMJkqx4vmT3Ywj6tNyd9cETcWN2NdBAvxY2G',
+            store: 'docs',
+            model: 'free',
+            greeting: 'Ask about Zoo Labs — DeAI, DeSci, and the research network.',
+          }}
         >
           {children}
         </RootProvider>
