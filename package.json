@@ -15,13 +15,13 @@
     "types:check": "docs-mdx && tsc --noEmit"
   },
   "dependencies": {
-    "@hanzo/design": "^0.5.13",
+    "@hanzo/design": "^0.5.25",
     "@hanzo/docs": "^17.0.4",
     "@hanzo/docs-core": "^17.0.1",
-    "@hanzo/docs-mdx": "14.2.8",
-    "@hanzo/docs-ui": "^17.0.4",
-    "@hanzo/gui": "^8.1.1",
-    "@hanzo/ui": "^8.0.111",
+    "@hanzo/docs-mdx": "^15.0.10",
+    "@hanzo/docs-ui": "^17.0.5",
+    "@hanzo/gui": "^8.3.1",
+    "@hanzo/ui": "^8.27.5",
     "@hanzogui/lucide-icons-2": "^8.1.1",
     "esbuild": "^0.25.0",
     "next": "^16.1.1",
