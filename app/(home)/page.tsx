@@ -4,12 +4,12 @@ import type { ComponentProps, ReactNode } from 'react';
 import Link from '@hanzo/docs/core/link';
 import {
   Button,
-  Grid,
   Paragraph,
   SizableText,
   XStack,
   YStack,
 } from '@hanzo/ui';
+import { Grid } from '@hanzo/ui/grid';
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -207,7 +207,7 @@ export default function HomePage() {
         {/* Mission */}
         <YStack render="section">
           <Title sub="Democratizing AI through:">Mission</Title>
-          <Grid min={220} max={5} gap="$3">
+          <Grid columns={{ min: 220, max: 5 }} gap="$3">
             {mission.map((item) => (
               <Panel key={item.name} p="$4" gap="$2">
                 <SizableText size="$3" fontWeight="600" color="$color12">
@@ -224,7 +224,7 @@ export default function HomePage() {
         {/* Core Protocols */}
         <YStack render="section">
           <Title sub="The two protocols the network is built on.">Core Protocols</Title>
-          <Grid min={300} max={2} gap="$4">
+          <Grid columns={{ min: 300, max: 2 }} gap="$4">
             {protocols.map((p) => (
               <Panel key={p.name} href={p.href} p="$6" gap="$2" justify="space-between">
                 <YStack gap="$2">
@@ -251,7 +251,7 @@ export default function HomePage() {
         {/* Ecosystem */}
         <YStack render="section">
           <Title sub="Applications and services running on the network.">Ecosystem</Title>
-          <Grid min={220} max={5} gap="$3">
+          <Grid columns={{ min: 220, max: 5 }} gap="$3">
             {ecosystem.map((item) => (
               <Panel key={item.name} href={item.href} p="$4" minH={120} justify="space-between">
                 <YStack gap="$1">
@@ -273,7 +273,7 @@ export default function HomePage() {
         {/* Community */}
         <YStack render="section">
           <Title sub="Join the Zoo community.">Community</Title>
-          <Grid min={260} max={3} gap="$4">
+          <Grid columns={{ min: 260, max: 3 }} gap="$4">
             {community.map((item) => (
               <Panel key={item.name} href={item.href} p="$5" gap="$1">
                 <SizableText size="$4" fontWeight="600" color="$color12">
